@@ -13,6 +13,7 @@ public class FeedItem {
 	private Date _publicationDate;
 	private String _mediaURL;
 	private Long _mediaSize;
+	private String _id;
 
 	public ContentValues getContentValues() {
 		ContentValues values = new ContentValues();
@@ -89,4 +90,11 @@ public class FeedItem {
 		this._mediaSize = mediaSize;
 	}
 
+	public void setId(String id) {
+		this._id = id;
+	}
+
+	public String getId() {
+		return this._id;
+	}
 }

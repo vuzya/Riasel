@@ -70,6 +70,8 @@ public class RSSParser {
 					item = new FeedItem();
 				} else if (name.equalsIgnoreCase("title") && parser.getNamespace().equals("")) {
 					item.setTitle(parser.nextText());
+				} else if (name.equalsIgnoreCase("guid")) {
+					item.setId(parser.nextText());
 				} else if (name.equalsIgnoreCase("link")) {
 					String rel = parser.getAttributeValue(null, "rel");
 					if (rel != null && rel.equalsIgnoreCase("payment")) {

@@ -44,7 +44,9 @@ public class AtomParser {
 			if (eventType == XmlPullParser.START_TAG) {
 				if (isAtomElement(parser, "entry")) {
 					item = new FeedItem();
-				} else if (isAtomElement(parser, "title")) {
+				} else if (isAtomElement(parser, "id")) {
+					item.setId(parser.nextText());
+				}  else if (isAtomElement(parser, "title")) {
 					item.setTitle(parser.nextText());
 				} else if (isAtomElement(parser, "link")) {
 					String rel = parser.getAttributeValue(null, "rel");
